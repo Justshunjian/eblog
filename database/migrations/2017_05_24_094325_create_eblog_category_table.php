@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateEblogCategoryTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('category',function (Blueprint $table){
+            $table->increments('cate_id');
+            $table->string('cate_name', 50)->nullable();
+            $table->string('cate_title', 255)->nullable();
+            $table->string('cate_keywords', 255)->nullable();
+            $table->string('cate_description', 255)->nullable();
+            $table->integer('cate_view')->default(0);
+            $table->smallInteger('cate_order')->default(0);
+            $table->integer('cate_pid')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('category');
+    }
+}
