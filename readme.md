@@ -1,4 +1,4 @@
-this project is based on php laravel framework
+this project is based on php laravel(5.4.23,ps: execute cmd php artisan -version) framework
 
 ## About eblog
 eblog contains fontend and backend
